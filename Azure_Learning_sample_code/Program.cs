@@ -20,11 +20,18 @@ namespace Azure_Learning_sample_code
             blobcontainer.SetPermissions(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob });
 
             //Download
+            CloudBlockBlob blockblob = blobcontainer.GetBlockBlobReference("DCIPL_Tech_SI_Hemant_Bharadwaj.docx");
+            
+            CloudAppendBlob cab = blobcontainer.GetAppendBlobReference("Ap_blob");
+            cab.CreateOrReplace();
 
+            //using (var filestream = System.IO.File.OpenWrite(@"C:\AzureSample\demo.txt"))
+            //{
+            //    blockblob.DownloadToStream(filestream);
+            //}
+            //delete blob
+         //   blockblob.Delete();
 
-            
-            
-            
             //Upload
 
 
