@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure_Learning_sample_code", "Azure_Learning_sample_code\Azure_Learning_sample_code.csproj", "{DEC311C4-28AB-4584-A94A-6115B38CF2C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorage", "Azure_Learning_sample_code\BlobStorage.csproj", "{DEC311C4-28AB-4584-A94A-6115B38CF2C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueStorage", "QueueStoage\QueueStorage.csproj", "{CEC809D0-966E-4C04-86A4-C78F1EB156A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DEC311C4-28AB-4584-A94A-6115B38CF2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC311C4-28AB-4584-A94A-6115B38CF2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC311C4-28AB-4584-A94A-6115B38CF2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC809D0-966E-4C04-86A4-C78F1EB156A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC809D0-966E-4C04-86A4-C78F1EB156A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC809D0-966E-4C04-86A4-C78F1EB156A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC809D0-966E-4C04-86A4-C78F1EB156A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
