@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueStorage", "QueueStoage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableStorage", "TableStorage\TableStorage.csproj", "{0553560E-A515-466D-8DA6-770112F9CFA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStorage", "FileStorage\FileStorage.csproj", "{EA5A4E56-35DB-4D7A-94DC-D3830F8B39C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0553560E-A515-466D-8DA6-770112F9CFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0553560E-A515-466D-8DA6-770112F9CFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0553560E-A515-466D-8DA6-770112F9CFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA5A4E56-35DB-4D7A-94DC-D3830F8B39C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA5A4E56-35DB-4D7A-94DC-D3830F8B39C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA5A4E56-35DB-4D7A-94DC-D3830F8B39C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA5A4E56-35DB-4D7A-94DC-D3830F8B39C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
