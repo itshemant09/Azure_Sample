@@ -7,7 +7,7 @@ using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace Azure_Learning_sample_code
+namespace BlobStorage
 {
     class Program
     {
