@@ -13,7 +13,7 @@ namespace Azure_Learning_sample_code
     {
         static void Main(string[] args)
         {
-            //creating stoarge acount
+            //creating stoarge acount on azure
 
             CloudStorageAccount csa = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
