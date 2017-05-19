@@ -31,8 +31,8 @@ namespace TableStorage
 
             // creating entity 1
 
-            CustomerEntity cust = new CustomerEntity("Bharadwaj","Hemanth");
-             //cust.Email = "abc@xy.com";
+            CustomerEntity cust = new CustomerEntity("Bharadwaj", "Hemanth");
+            //cust.Email = "abc@xy.com";
             //cust.PhoneNumber = "+91-8123899837";
 
 
@@ -76,15 +76,15 @@ namespace TableStorage
 
             //fetching each customer
 
-            foreach(CustomerEntity ce in cloudtbl.ExecuteQuery(query))
+            foreach (CustomerEntity ce in cloudtbl.ExecuteQuery(query))
             {
-                Console.WriteLine("{0},{1},{2},{3}", ce.PartitionKey, ce.RowKey, ce.Email,ce.PhoneNumber);
+                Console.WriteLine("{0},{1},{2},{3}", ce.PartitionKey, ce.RowKey, ce.Email, ce.PhoneNumber);
 
             }
 
             //Execute table query operation
 
-            TableQuery<CustomerEntity> query2 = new TableQuery<CustomerEntity>().Where(TableQuery.CombineFilters(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Bharadwaj"),TableOperators.And,TableQuery.GenerateFilterCondition("RowKey",QueryComparisons.Equal,"Hemanth")));
+            TableQuery<CustomerEntity> query2 = new TableQuery<CustomerEntity>().Where(TableQuery.CombineFilters(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Bharadwaj"), TableOperators.And, TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, "Hemanth")));
 
             //fetching each customer
 
@@ -102,7 +102,7 @@ namespace TableStorage
             TableResult result = cloudtbl.Execute(tr2);
 
             //checking if exist
-            if(result.Result!=null)
+            if (result.Result != null)
             {
                 Console.WriteLine(((CustomerEntity)result.Result).PhoneNumber);
             }
@@ -111,11 +111,66 @@ namespace TableStorage
                 Console.WriteLine("This person doesn't have phone number");
             }
 
+            //update entity
+
+            CustomerEntity update = (CustomerEntity)result.Result;
+
+            //cheking and updating
+
+            if (update != null)
+            {
+                update.PhoneNumber = "+91-7799578900";
+
+                TableOperation update1 = TableOperation.Replace(update);
+
+                cloudtbl.Execute(update1);
+
+                Console.WriteLine("Updated");
+            }
+            else
+            {
+                Console.WriteLine("This person doesn't have phone number");
+            }
+
+            //Insert or Replace operation
+            TableOperation tr8 = TableOperation.Retrieve<CustomerEntity>("Bharadwaj", "Tanish");
+
+            //using table result
+            TableResult result8 = cloudtbl.Execute(tr2);
+            CustomerEntity InsertorReplace = (CustomerEntity)result8.Result;
+            TableOperation tr4 = TableOperation.InsertOrReplace(InsertorReplace);
+            cloudtbl.Execute(tr4);
+
+            //Query subset of table (projection)
+            TableQuery<DynamicTableEntity> dte = new TableQuery<DynamicTableEntity>().Select(new string[] { "Email" });
+            EntityResolver<string> resolver = (pk, rk, ts, props, etag) => props.ContainsKey("Email") ? props["Email"].StringValue : null;
+            foreach (string projectedemail in cloudtbl.ExecuteQuery(dte, resolver, null, null))
+            {
+                Console.WriteLine(projectedemail);
+            }
+
+            //delete entity
+                        
+            //if(InsertorReplace != null)
+            //{
+            //    TableOperation tr5 = TableOperation.Delete(InsertorReplace);
+            //    cloudtbl.Execute(tr5);
+            //    Console.WriteLine("Deleted");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Exist");
+            //}
+
+
+            //delete table
+
+          //  cloudtbl.DeleteIfExists();
 
             Console.ReadLine();
 
 
-            
+
 
         }
     }
