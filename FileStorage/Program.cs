@@ -14,7 +14,7 @@ namespace FileStorage
     {
         static void Main(string[] args)
         {
-            //creating stoarge acount on azure
+            //creating stoarge account on azure
 
             CloudStorageAccount csa = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("samplecodeazure"));
 
